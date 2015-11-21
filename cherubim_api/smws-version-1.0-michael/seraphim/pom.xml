@@ -30,6 +30,7 @@ limitations under the License. -->
 	<org.slf4j-version>1.7.5</org.slf4j-version>
 	<surefire.version>2.18.1</surefire.version>
 	<jackson.databind-version>2.2.3</jackson.databind-version>
+	<spring.social.facebook>2.0.2.RELEASE</spring.social.facebook>
   </properties>
   
   <dependencies>
@@ -133,6 +134,13 @@ limitations under the License. -->
 		<version>${spring.security.version}</version>
 	</dependency>
  
+	<!--Spring Social Facebook-->
+	 <dependency>
+	  <groupId>org.springframework.social</groupId>
+	  <artifactId>spring-social-facebook</artifactId>
+	  <version>${spring.social.facebook}</version>
+	</dependency>
+	
 	<!-- CGLIB is required to process @Configuration classes -->
 	<dependency>
 		<groupId>cglib</groupId>
@@ -231,7 +239,7 @@ limitations under the License. -->
 	</dependency>
   </dependencies>
    <build>
-    <finalName>seraphim</finalName>
+    <finalName>Cherubim-API</finalName>
 	<plugins>
 	   <!-- Eclipse project -->
 	   <plugin>
