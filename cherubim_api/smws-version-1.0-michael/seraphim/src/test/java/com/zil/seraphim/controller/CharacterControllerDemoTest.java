@@ -21,8 +21,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.zil.seraphim.demo.model.Character;
 import com.zil.seraphim.test.MasterControllerTest;
 
-public class CharacterControllerTest extends MasterControllerTest{
-	private static final Logger LOGGER = LoggerFactory.getLogger(CharacterControllerTest.class);
+public class CharacterControllerDemoTest extends MasterControllerTest{
+	private static final Logger LOGGER = LoggerFactory.getLogger(CharacterControllerDemoTest.class);
 
 	@Test
 	public void listAllCharactersTest() throws Exception {

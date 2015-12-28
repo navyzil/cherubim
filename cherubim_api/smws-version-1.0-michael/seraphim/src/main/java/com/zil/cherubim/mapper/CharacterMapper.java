@@ -92,5 +92,5 @@ public interface CharacterMapper {
      *
      * @mbggenerated Sat Dec 26 21:53:38 CST 2015
      */
-    int updateByPrimaryKey(Character record);
+    int updateByPrimaryKey(Character record);    
 }

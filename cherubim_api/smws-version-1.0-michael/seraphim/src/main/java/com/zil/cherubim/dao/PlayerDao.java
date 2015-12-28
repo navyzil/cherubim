@@ -7,5 +7,7 @@ import com.zil.cherubim.model.Player;
 public interface PlayerDao {
 	public List<Player> getAllPlayers();
 	public Player getPlayerInfo(Player player);
-	public boolean savePlayer(Player player); //save newly created or updated character info
+	public boolean createPlayer(Player player); //save newly created character info
+	public boolean updatePlayer(Player player); //save updated character info
+
 }

@@ -14,9 +14,9 @@ import com.zil.seraphim.demo.dao.CharacterDao;
 import com.zil.seraphim.demo.model.Character;
 import com.zil.seraphim.test.impl.MasterTestImpl;
 
-public class CharacterDaoTest extends MasterTestImpl{
+public class CharacterDaoDemoTest extends MasterTestImpl{
 
-	@Autowired
+	//@Autowired
 	CharacterDao characterDao;
 	
 	@Override

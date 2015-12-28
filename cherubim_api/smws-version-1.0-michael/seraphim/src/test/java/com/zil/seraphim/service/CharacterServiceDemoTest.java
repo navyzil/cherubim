@@ -14,9 +14,9 @@ import com.zil.seraphim.demo.model.Character;
 import com.zil.seraphim.demo.service.CharacterService;
 import com.zil.seraphim.test.impl.MasterTestImpl;
 
-public class CharacterServiceTest extends MasterTestImpl{
+public class CharacterServiceDemoTest extends MasterTestImpl{
 
-	@Autowired
+//	@Autowired
 	CharacterService characterService;
 	
 	@Override

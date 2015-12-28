@@ -32,7 +32,7 @@ limitations under the License. -->
 	
 	<context:annotation-config/>
 	
-	<context:component-scan base-package="com.zil.seraphim" /><!-- change component-scan package -->
+	<context:component-scan base-package="com.zil" /><!-- change component-scan package -->
 	
 	<mvc:annotation-driven /> 
 	
@@ -58,7 +58,7 @@ limitations under the License. -->
 	
 	<!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zil.seraphim.mapper" /> <!-- change basePackage value -->
+        <property name="basePackage" value="com.zil.cherubim.mapper" /> <!-- change basePackage value -->
     </bean>
     
   <!-- transactionManager for Hibernate -->

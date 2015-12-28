@@ -31,6 +31,9 @@ limitations under the License. -->
   
   <!-- Place your Mappers.xml here -->
   <mappers>
- 	<mapper resource='mappers/com/zil/seraphim/demo/mapper/xml/CharacterMapper.xml'/> <!-- change resource value -->
+ 	<mapper resource='mappers/com/zil/cherubim/mapper/xml/CharacterMapper.xml'/> 
+  	<mapper resource='mappers/com/zil/cherubim/mapper/xml/PlayerMapper.xml'/> 
+  	<mapper resource='mappers/com/zil/cherubim/mapper/xml/PlayerCharacterMapper.xml'/> <!-- change resource value -->
+  	
   </mappers>
 </configuration>

@@ -5,7 +5,8 @@ import com.zil.cherubim.model.Character;
 public interface CharacterDao {
 	public List<Character> getAllCharacters();
 	public Character getCharacterInfo(Character character);
-	public boolean saveCharacter(Character character); //save newly created or updated character info
+	public int createCharacter(Character character); //save newly created character info
+	public boolean updateCharacter(Character character); //save updated character info
 	public boolean deleteCharacter(Character character); //delete character
 
 }
