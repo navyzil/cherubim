@@ -12,6 +12,7 @@ import com.zil.cherubim.dao.PlayerDao;
 import com.zil.cherubim.mapper.PlayerMapper;
 import com.zil.cherubim.model.Player;
 import com.zil.cherubim.model.PlayerExample;
+import com.zil.cherubim.model.PlayerExample.Criteria;
 
 @Repository
 public class PlayerDaoImpl implements PlayerDao {
@@ -38,7 +39,14 @@ public class PlayerDaoImpl implements PlayerDao {
 
 	@Override
 	public boolean createPlayer(Player player) {
+		
 		PlayerMapper playerMapper = sessionFactory.openSession().getMapper(PlayerMapper.class);
+		//generate new playerId based on the last inserted playerId
+
+		LOGGER.info("Generating playerId...");
+		int playerId = generatePlayerId();
+		player.setPlayerId(playerId);
+
 		int result = playerMapper.insertSelective(player);
 		if(result == 1){
 			return true;
@@ -55,5 +63,37 @@ public class PlayerDaoImpl implements PlayerDao {
 		}
 		return false;
 	}
+
+	@Override
+	public boolean isPlayerExist(Player player) {
+		PlayerMapper playerMapper = sessionFactory.openSession().getMapper(PlayerMapper.class);
+		PlayerExample example = new PlayerExample();
+		
+		Criteria criteria = example.createCriteria();
+		criteria.andPlayerNameLike(player.getPlayerName());
+		criteria.andEmailLike(player.getEmail());
+		
+		int result = playerMapper.selectByExample(example).size();
+		if(result >=1){
+			return true;
+		}
+		return false;
+	}
+	
+	private int generatePlayerId(){
+		List<Player> allPlayers = getAllPlayers();
+		
+		int lastInsertedPlayerId = 0;
+		if(allPlayers.size() >0){
+		 int lastElement = allPlayers.size() - 1;
+		 lastInsertedPlayerId = allPlayers.get(lastElement).getPlayerId();
+		}
+		
+		int newPlayerId = lastInsertedPlayerId + 1;
+		
+		return  newPlayerId;
+		//return newPlayerId;
+	}
+
 
 }

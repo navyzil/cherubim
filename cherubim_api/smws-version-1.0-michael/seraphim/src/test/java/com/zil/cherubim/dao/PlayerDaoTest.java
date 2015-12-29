@@ -23,7 +23,7 @@ public class PlayerDaoTest extends MasterTestImpl{
 	@Override
 	public void doSetup() {
 		Player player = new Player();
-		player.setPlayerId(1);
+		//player.setPlayerId(1);
 		player.setPlayerName("Player Name 123");
 		player.setEmail("uniqueEmail@email.com");
 		player.setPassword("Password@123");
@@ -41,7 +41,7 @@ public class PlayerDaoTest extends MasterTestImpl{
 	@Test
 	public void createPlayerTest(){
 		Player player = new Player();
-		player.setPlayerId(2);
+//		player.setPlayerId(2);
 		player.setPlayerName("Player Name 1232");
 		player.setEmail("uniqueEmail2@email.com");
 		player.setPassword("Password@123");
@@ -72,7 +72,6 @@ public class PlayerDaoTest extends MasterTestImpl{
 		assertThat(actualPlayer.getPlayerName(),is("Player Name 12"));
 
 	}
-
 	
 	@Test
 	public void retrieveSinglePlayerTest(){
@@ -85,5 +84,32 @@ public class PlayerDaoTest extends MasterTestImpl{
 		Player actualPlayer = playerDao.getPlayerInfo(player);
 		int actualPlayerId = actualPlayer.getPlayerId();
 		assertThat(actualPlayerId, is(expectedPlayerId));
+	}
+	
+	@Test
+	public void checkIfPlayerExistTest(){
+		Player player = new Player();
+//		player.setPlayerId(1);
+		player.setPlayerName("Player Name 123");
+		player.setEmail("uniqueEmail@email.com");
+		player.setPassword("Password@123");
+		player.setBirthdate(new Date());
+		
+		boolean playerExist = playerDao.isPlayerExist(player);
+		
+		assertThat(playerExist, is(true));
+		
+		//if player don't exist
+		
+		player = new Player();
+//		player.setPlayerId(2);
+		player.setPlayerName("Player Name 1234");
+		player.setEmail("uniqueEmail2@email.com");
+		player.setPassword("Password@123");
+		player.setBirthdate(new Date());
+		
+		playerExist = playerDao.isPlayerExist(player);
+		assertThat(playerExist, is(false));
+
 	}
 }

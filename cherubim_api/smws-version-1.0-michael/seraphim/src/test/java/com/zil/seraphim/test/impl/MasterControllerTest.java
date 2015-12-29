@@ -20,7 +20,7 @@
  *  @ParentClass: MasterTestImpl
  * 
  */
-package com.zil.seraphim.test;
+package com.zil.seraphim.test.impl;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
